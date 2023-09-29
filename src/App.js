@@ -1,7 +1,8 @@
 import "./App.css";
+import { connect } from "react-redux";
 
 function App() {
   return <div className="App"></div>;
 }
 
-export default App;
+export default connect()(App);

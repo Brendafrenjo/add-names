@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "bootstrap/dist/css/bootstrap.css";
 import "./index.css";
+import "bootstrap/dist/css/bootstrap.css";
 import App from "./App";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
-import reportWebVitals from "./reportWebVitals";
 import namesReducer from "./reducer";
+import reportWebVitals from "./reportWebVitals";
 
 const store = createStore(namesReducer);
 

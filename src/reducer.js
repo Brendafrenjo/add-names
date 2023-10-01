@@ -9,7 +9,12 @@ function namesReducer(state = initialState, action) {
         ...state,
         names: [...state.names, action.payload],
       };
+    case "DELETE_NAME":
+      return {
+        names: [...state.names.filter((names) => names !== action.payload)],
+      };
     default:
       return state;
   }
 }
+export default namesReducer;

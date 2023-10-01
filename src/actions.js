@@ -8,7 +8,7 @@ export default function addName(text) {
   };
 }
 
-function deleteName(text) {
+export function deleteName(text) {
   return {
     type: "DELETE_NAME",
     payload: text,

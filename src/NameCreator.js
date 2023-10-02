@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import addName from "./actions";
 
-export default function NameCreator() {
+function NameCreator(props) {
   const [name, setName] = useState(null);
 
   function handleSubmit(event) {
     event.preventDefault();
-    name();
+    props.addName(name);
+    setName("");
   }
 
   function handleChange(event) {
@@ -31,3 +34,11 @@ export default function NameCreator() {
     </div>
   );
 }
+
+function mapDispatchToProps(dispatch) {
+  return {
+    addName: (text) => dispatch(addName(text)),
+  };
+}
+
+export default connect(null, mapDispatchToProps)(NameCreator);

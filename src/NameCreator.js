@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import Recat, { useState } from "react";
 import { connect } from "react-redux";
 import addName from "./actions";
 
 function NameCreator(props) {
-  const [name, setName] = useState(null);
+  const [change, setChange] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
-    props.addName(name);
-    setName("");
+    props.addName(change);
+    setChange("");
   }
 
   function handleChange(event) {
-    setName(event.target.value);
+    setChange(event.target.value);
   }
 
   return (
@@ -22,13 +22,13 @@ function NameCreator(props) {
           type="search"
           placeholder="Type Name here..."
           autoFocus="on"
-          className="form-control w-100"
+          className="w-100 form-control"
           onChange={handleChange}
         />
         <input
           type="submit"
-          placeholder="Add Name"
-          className="btn btn-secondary"
+          value="Add Names"
+          className=" w-100 btn btn-secondary"
         />
       </form>
     </div>
@@ -37,8 +37,8 @@ function NameCreator(props) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    addName: (text) => dispatch(addName(text)),
-  };
+    addName: (text) => dispatch(addName(text))
+  }
 }
 
 export default connect(null, mapDispatchToProps)(NameCreator);

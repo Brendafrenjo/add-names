@@ -37,8 +37,10 @@ function NameCreator(props) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    addName: (text) => dispatch(addName(text))
-  }
+    addName: function (text) {
+      dispatch(addName(text));
+    },
+  };
 }
 
 export default connect(null, mapDispatchToProps)(NameCreator);

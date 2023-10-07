@@ -1,10 +1,12 @@
 import "./App.css";
 import { connect } from "react-redux";
+import NameCreator from "./NameCreator";
 
 function App() {
   return (
     <div className="App">
-      <p>Add Names App</p>
+      <NameCreator />
+      <NameContainer />
     </div>
   );
 }
